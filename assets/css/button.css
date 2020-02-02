@@ -1,0 +1,26 @@
+/* Button */
+
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    color: #ffffff;
+    background-color: #998675;
+    padding: 0px 48px;
+    font-size: 14px;
+    font-family: Raleway;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    height: 50px;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 4px 1px #736357;
+    cursor: pointer;
+    transition: background .1s linear;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    background-color: #a58467;
+    box-shadow: 0 4px 1px #7d6757;
+}

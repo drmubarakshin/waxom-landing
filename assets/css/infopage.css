@@ -1,0 +1,60 @@
+@media screen and (min-width: 769px) {
+    .infopage {
+        background-color: #fbfaf8;
+    }
+    .infopage.latest {
+        background-color: #ffffff;
+    }
+    .infopage__inner {
+        grid-column: 1 / 13;
+    }
+    .infopage__title {
+        font-size: 30px;
+        font-weight: 700;
+        font-family: Raleway;
+        text-align: center;
+        margin-top: 85px;
+    }
+    .infopage__description {
+        font-size: 16px;
+        font-weight: 200;
+        font-family: Montserrat;
+        text-align: center;
+        margin: 28px auto 0;
+        max-width: 805px;
+    }
+    .infopage__img {
+        width: 100%;
+        margin: 45px auto -4.5px;
+    }
+    .infopage__btn-block {
+        grid-column: 1 / 13;
+        display: flex;
+        flex-direction: row;
+        margin: 40px auto;
+        justify-content: center;
+    }
+    .infopage__btn {
+        display: inline-block;
+        margin: 0 5px;
+        padding: 5px 10px;
+        color: #8c8c8c;
+        background-color: #ffffff;
+        font-size: 16px;
+        font-weight: 200;
+        font-family: Montserrat;
+        text-decoration: none;
+        text-align: center;
+        border: 1px solid #ececec;
+        border-radius: 2px;
+        transition: backcround-color .1s linear, color .1s linear;
+    }
+    .infopage__btn.active {
+        color: #ffffff;
+        background-color: #998675;
+    }
+    .infopage__btn:hover {
+        color: #ffffff;
+        background-color: #998675;
+    }
+}

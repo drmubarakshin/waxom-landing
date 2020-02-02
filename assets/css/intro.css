@@ -1,0 +1,69 @@
+/* The first view */
+
+@media screen and (min-width: 769px) {
+    .intro {
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        background: #348cb2 url("../images/intro/background-photo.png") center no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .intro__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .intro__inner-body {
+        grid-column: 4 / 10;
+    }
+    .intro__inner-left {
+        margin: auto;
+        grid-column: 1 / 4;
+        cursor: pointer;
+    }
+    .intro__inner-right {
+        margin: auto;
+        grid-column: 10 / 13;
+        cursor: pointer;
+    }
+    .intro__suptitle {
+        color: #ffffff;
+        font-family: Raleway;
+        font-weight: 600;
+        font-size: 36px;
+    }
+    .intro__title {
+        color: #ffffff;
+        font-family: Raleway;
+        font-weight: 900;
+        font-size: 52px;
+        margin-top: 8px;
+    }
+    .intro__subtitle {
+        color: #ffffff;
+        font-family: Montserrat;
+        font-weight: 200;
+        font-size: 16px;
+        margin-top: 14px;
+        max-width: 600px;
+        line-height: 28px;
+        text-align: center;
+        margin-bottom: 55px;
+    }
+    .intro__tracker {
+        position: absolute;
+        bottom: 40px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        left: 47%;
+    }
+    .intro__tracker-item {
+        margin: 0 5px;
+    }
+}

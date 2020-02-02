@@ -1,0 +1,49 @@
+/* Styles import */
+
+@import url('../fonts/Montserrat/stylesheet.css');
+@import url('../fonts/Raleway/stylesheet.css');
+
+/* Styles import */
+
+@import url('./button.css');
+@import url('./header.css');
+@import url('./intro.css');
+@import url('./navigation.css');
+@import url('./infopage.css');
+@import url('./gradient.css');
+@import url('./projects.css');
+
+/* Main page styles */
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+    .container {
+        max-width: 1230px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+    .container.header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .container.intro {
+        position: relative;
+        max-width: 100%;
+    }
+    .container.projects {
+        grid-row-gap: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-container {}
+}

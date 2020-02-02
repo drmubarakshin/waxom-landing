@@ -1,3 +1,3 @@
 # Portfolio PSD Template
 
-# To open start the page just open 'index.html' page
+# To start the page just open 'index.html' file

@@ -35,6 +35,9 @@
     .navigation__item:hover .navigation__item-title {
         color: #c7b299;
     }
+    .navigation__item:hover .cls-1 {
+        fill: #c7b299;
+    }
     .navigation__item:hover:after {
         background-color: #c7b299;
     }

@@ -6,6 +6,70 @@
     <title>SBT test task</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
     <script>
+        var slideData = [{
+            suptitle: 'Unique and Modern Design',
+            title: 'Portfolio PSD Template',
+            subtitle: 'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.',
+            link: 'https://vk.com/',
+            background: '../images/intro/background-photo.png'
+        }, {
+            suptitle: 'Unique and Modern Design2',
+            title: 'Portfolio PSD Template2',
+            subtitle: 'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.2',
+            link: 'https://vk.com/',
+            background: '../images/intro/background-photo.png'
+        }, {
+            suptitle: 'Unique and Modern Design3',
+            title: 'Portfolio PSD Template3',
+            subtitle: 'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.3',
+            link: 'https://vk.com/',
+            background: '../images/intro/background-photo.png'
+        }, {
+            suptitle: 'Unique and Modern Design4',
+            title: 'Portfolio PSD Template4',
+            subtitle: 'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.4',
+            link: 'https://vk.com/',
+            background: '../images/intro/background-photo.png'
+        }, {
+            suptitle: 'Unique and Modern Design5',
+            title: 'Portfolio PSD Template5',
+            subtitle: 'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.5',
+            link: 'https://vk.com/',
+            background: '../images/intro/background-photo.png'
+        }];
+
+        function slide(direction) {
+            let imgNum = parseInt(document.getElementById('slideNumber').value, 10);
+            if (direction == 'left')
+                imgNum -= 1;
+            else if (direction == 'right')
+                imgNum += 1;
+            if (imgNum < 0)
+                imgNum = 4;
+            else if (imgNum > 4)
+                imgNum = 0;
+            document.getElementById('intro').className = 'intro hidden';
+            setTimeout(function() {
+                var background = 'url("' + slideData[imgNum].background + '") center no-repeat;';
+                document.getElementById('intro').style.background = background;
+                document.getElementById('intro-suptitle').innerText = slideData[imgNum].suptitle;
+                document.getElementById('intro-title').innerText = slideData[imgNum].title;
+                document.getElementById('intro-subtitle').innerText = slideData[imgNum].subtitle;
+                document.getElementById('slideNumber').value = imgNum;
+                var i;
+                for (i = 0; i < 5; i++) {
+                    var id = 'intro-counter-' + i;
+                    if (imgNum == i)
+                        document.getElementById(id).src = "assets/images/intro/active-page-tracker.svg";
+                    else {
+                        document.getElementById(id).src = "assets/images/intro/unactive-page-tracker.svg";
+                    }
+                }
+            }, 1000);
+            setTimeout(function() {
+                document.getElementById('intro').className = 'intro';
+            }, 1000);
+        }
     </script>
 </head>
 
@@ -34,22 +98,23 @@
 
     <div id="intro" class="intro">
         <div class="container intro">
-            <img src="assets/images/intro/arrow-left.png" alt="left-arrow" class="intro__inner-left">
-            <div id="intro__inner" class="intro__inner intro__inner-body">
-                <div class="intro__suptitle">Unique and Modern Design</div>
-                <div class="intro__title">Portfolio PSD Template</div>
-                <div class="intro__subtitle">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</div>
+            <img id="leftBtn" src="assets/images/intro/arrow-left.png" alt="left-arrow" class="intro__inner-left" onclick="slide('left')">
+            <div id="intro-inner" class="intro__inner intro__inner-body">
+                <div id="intro-suptitle" class="intro__suptitle">Unique and Modern Design</div>
+                <div id="intro-title" class="intro__title">Portfolio PSD Template</div>
+                <div id="intro-subtitle" class="intro__subtitle">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</div>
                 <button href="#" class="btn">Get started</button>
                 <div id="intro__tracker" class="intro__tracker">
-                    <img src="assets/images/intro/active-page-tracker.svg" alt="active" class="intro__tracker-item">
-                    <img src="assets/images/intro/uncative-page-tracker.svg" alt="uncative" class="intro__tracker-item">
-                    <img src="assets/images/intro/uncative-page-tracker.svg" alt="uncative" class="intro__tracker-item">
-                    <img src="assets/images/intro/uncative-page-tracker.svg" alt="uncative" class="intro__tracker-item">
-                    <img src="assets/images/intro/uncative-page-tracker.svg" alt="uncative" class="intro__tracker-item">
+                    <img id="intro-counter-0" src="assets/images/intro/active-page-tracker.svg" alt="active" class="intro__tracker-item">
+                    <img id="intro-counter-1" src="assets/images/intro/unactive-page-tracker.svg" alt="unaсtive" class="intro__tracker-item">
+                    <img id="intro-counter-2" src="assets/images/intro/unactive-page-tracker.svg" alt="unaсtive" class="intro__tracker-item">
+                    <img id="intro-counter-3" src="assets/images/intro/unactive-page-tracker.svg" alt="unaсtive" class="intro__tracker-item">
+                    <img id="intro-counter-4" src="assets/images/intro/unactive-page-tracker.svg" alt="unaсtive" class="intro__tracker-item">
                 </div>
             </div>
-            <img src="assets/images/intro/arrow-right.png" alt="right-arrow" class="intro__inner-right">
+            <img id="rightBtn" src="assets/images/intro/arrow-right.png" alt="right-arrow" class="intro__inner-right" onclick="slide('right')">
         </div>
+        <input id="slideNumber" type="hidden" value="0">
     </div>
 
     <div class="navigation">

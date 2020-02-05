@@ -35,8 +35,6 @@
     z-index: 3;
 }
 
-.header__burger:hover {}
-
 .nav {
     display: flex;
     font-size: 14px;
@@ -99,7 +97,7 @@
         height: 100%;
         background-color: #454440;
         flex-direction: column;
-        background-image: url("../images/intro/background-photo.png");
+        background: url("../images/intro/background-photo.png") center no-repeat;
         z-index: 5;
     }
     .nav__close-button {

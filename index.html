@@ -6,6 +6,7 @@
     <title>SBT test task</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
     <script>
+        /* Slider block */
         var slideData = [{
             suptitle: 'Unique and Modern Design',
             title: 'Portfolio PSD Template',
@@ -70,16 +71,41 @@
                 document.getElementById('intro').className = 'intro';
             }, 1000);
         };
+
+        setTimeout(function() {
+            slide('right');
+        }, 5000);
+
+        /* Mobile menu block */
         let isMenuOpened = false;
 
         function openMobileMenu() {
             if (isMenuOpened)
                 document.getElementById('nav-bar').style.display = "none";
             else {
-                document.getElementById('')
                 document.getElementById('nav-bar').style.display = "flex";
             }
             isMenuOpened = !isMenuOpened;
+        }
+
+        /* Navigation block */
+        let activeNavItem;
+
+        function chooseNavItem(id) {
+            if (activeNavItem) {
+                document.getElementById(activeNavItem).className = 'navigation__item';
+            }
+            document.getElementById(id).className = 'navigation__item active';
+            activeNavItem = id;
+        }
+
+        /* Projects options handling */
+        let selectedProjectOption = 'infopage-btn-1';
+
+        function sortProjects(id) {
+            document.getElementById(selectedProjectOption).className = 'infopage__btn';
+            document.getElementById(id).className = 'infopage__btn active';
+            selectedProjectOption = id;
         }
     </script>
 </head>
@@ -117,9 +143,9 @@
         <div class="container intro">
             <img id="leftBtn" src="assets/images/intro/arrow-left.png" alt="left-arrow" class="intro__inner-left" onclick="slide('left')">
             <div id="intro-inner" class="intro__inner intro__inner-body">
-                <div id="intro-suptitle" class="intro__suptitle">Unique and Modern Design</div>
-                <div id="intro-title" class="intro__title">Portfolio PSD Template</div>
-                <div id="intro-subtitle" class="intro__subtitle">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</div>
+                <span id="intro-suptitle" class="intro__suptitle">Unique and Modern Design</span>
+                <span id="intro-title" class="intro__title">Portfolio PSD Template</span>
+                <span id="intro-subtitle" class="intro__subtitle">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</span>
                 <button href="#" class="btn">Get started</button>
                 <div id="intro__tracker" class="intro__tracker">
                     <img id="intro-counter-0" src="assets/images/intro/active-page-tracker.svg" alt="active" class="intro__tracker-item">
@@ -137,7 +163,7 @@
     <div class="navigation">
         <div class="container">
             <div class="navigation__inner">
-                <div class="navigation__item">
+                <div id="nav-item-1" class="navigation__item" onclick="chooseNavItem(this.id)">
                     <svg class="navigation__item-pic" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="47.594" height="47.59" viewBox="0 0 47.594 47.59">
                         <defs>
                             <style>
@@ -154,23 +180,23 @@
                         </defs>
                         <path id="icon" class="cls-1" d="M534.668,1121.47a1.591,1.591,0,0,0-2.248,0l-13.847,13.84-19.467,8.58-3-3,8.576-19.47,13.844-13.84a1.59,1.59,0,1,0-2.248-2.25l-14.268,14.26-14.477,32.87,32.868-14.47,14.266-14.27A1.592,1.592,0,0,0,534.668,1121.47Zm-20.173,11a1.606,1.606,0,0,0,2.25,0l13.332-13.34a1.591,1.591,0,0,0-2.25-2.25L514.5,1130.22A1.593,1.593,0,0,0,514.5,1132.47Zm-3.48-3.48a1.606,1.606,0,0,0,2.25,0l13.333-13.34a1.591,1.591,0,0,0-2.25-2.25l-13.333,13.33A1.6,1.6,0,0,0,511.015,1128.99Zm-3.481-3.49a1.581,1.581,0,0,0,2.25,0l13.333-13.33a1.591,1.591,0,0,0-2.25-2.25l-13.333,13.33A1.593,1.593,0,0,0,507.534,1125.5Z" transform="translate(-487.531 -1104.88)"/>
                     </svg>
-                    <div class="navigation__item-title">Web & App Design</div>
-                    <div class="navigation__item-descr">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</div>
+                    <span class="navigation__item-title">Web & App Design</span>
+                    <span class="navigation__item-descr">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</span>
                 </div>
-                <div class="navigation__item active">
+                <div id="nav-item-2" class="navigation__item" onclick="chooseNavItem(this.id)">
                     <img src="assets/images/navigation/stack.svg" alt="stack" class="navigation__item-pic">
-                    <div class="navigation__item-title">Development</div>
-                    <div class="navigation__item-descr">Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</div>
+                    <span class="navigation__item-title">Development</span>
+                    <span class="navigation__item-descr">Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</span>
                 </div>
-                <div class="navigation__item">
+                <div id="nav-item-3" class="navigation__item" onclick="chooseNavItem(this.id)">
                     <img src="assets/images/navigation/gear.svg" alt="gear" class="navigation__item-pic">
-                    <div class="navigation__item-title">Customization</div>
-                    <div class="navigation__item-descr">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</div>
+                    <span class="navigation__item-title">Customization</span>
+                    <span class="navigation__item-descr">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</span>
                 </div>
-                <div class="navigation__item">
+                <div id="nav-item-4" class="navigation__item" onclick="chooseNavItem(this.id)">
                     <img src="assets/images/navigation/files.svg" alt="files" class="navigation__item-pic">
-                    <div class="navigation__item-title">Marketing</div>
-                    <div class="navigation__item-descr">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</div>
+                    <span class="navigation__item-title">Marketing</span>
+                    <span class="navigation__item-descr">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.</span>
                 </div>
             </div>
         </div>
@@ -179,10 +205,10 @@
     <div class="infopage">
         <div class="container">
             <div class="infopage__inner">
-                <div class="infopage__title">Waxom is Realization of your Ideas.</div>
-                <div class="infopage__description">
+                <h1 class="infopage__title">Waxom is Realization of your Ideas.</h1>
+                <h3 class="infopage__description">
                     Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
-                </div>
+                </h3>
                 <img src="assets/images/browser-center.png" alt="browsers" class="infopage__img">
             </div>
         </div>
@@ -209,16 +235,16 @@
     <div class="infopage latest">
         <div class="container">
             <div class="infopage__inner">
-                <div class="infopage__title">Our Latest Projects.</div>
-                <div class="infopage__description">
+                <h1 class="infopage__title">Our Latest Projects.</h1>
+                <h3 class="infopage__description">
                     Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
-                </div>
+                </h3>
                 <div class="infopage__btn-block">
-                    <a href=# class="infopage__btn active">All</a>
-                    <a href=# class="infopage__btn">Web Design</a>
-                    <a href=# class="infopage__btn">Mobile App</a>
-                    <a href=# class="infopage__btn">Illustration</a>
-                    <a href=# class="infopage__btn">Photopraphy</a>
+                    <button id="infopage-btn-1" class="infopage__btn active" onclick="sortProjects(this.id)">All</button>
+                    <button id="infopage-btn-2" class="infopage__btn" onclick="sortProjects(this.id)">Web Design</button>
+                    <button id="infopage-btn-3" class="infopage__btn" onclick="sortProjects(this.id)">Mobile App</button>
+                    <button id="infopage-btn-4" class="infopage__btn" onclick="sortProjects(this.id)">Illustration</button>
+                    <button id="infopage-btn-5" class="infopage__btn" onclick="sortProjects(this.id)">Photopraphy</button>
                 </div>
                 <div class="infopage__projects-grid">
                     <div class="project">
@@ -229,8 +255,8 @@
                         </div>
                         <img src="assets/images/project/1.png" alt="1st-project" class="project__label">
                         <div class="project__footer">
-                            <div class="project__title">Claritas Etiam Processus</div>
-                            <div class="project__descr">Photography, Nature</div>
+                            <span class="project__title">Claritas Etiam Processus</span>
+                            <span class="project__descr">Photography, Nature</span>
                         </div>
                     </div>
                     <div class="project">
@@ -241,8 +267,8 @@
                         </div>
                         <img src="assets/images/project/2.png" alt="2nd-project" class="project__label">
                         <div class="project__footer">
-                            <div class="project__title">Quam Nutamus Farum</div>
-                            <div class="project__descr">Photography, Nature</div>
+                            <span class="project__title">Quam Nutamus Farum</span>
+                            <span class="project__descr">Photography, Nature</span>
                         </div>
                     </div>
                     <div class="project">
@@ -253,8 +279,8 @@
                         </div>
                         <img src="assets/images/project/3.png" alt="3rd-project" class="project__label">
                         <div class="project__footer">
-                            <div class="project__title">Usus Legentis Videntur</div>
-                            <div class="project__descr">Photography, Nature</div>
+                            <span class="project__title">Usus Legentis Videntur</span>
+                            <span class="project__descr">Photography, Nature</span>
                         </div>
                     </div>
                     <div class="project">
@@ -265,8 +291,8 @@
                         </div>
                         <img src="assets/images/project/4.png" alt="4th-project" class="project__label">
                         <div class="project__footer">
-                            <div class="project__title">Claritas Etiam Processus</div>
-                            <div class="project__descr">Photography, Nature</div>
+                            <span class="project__title">Claritas Etiam Processus</span>
+                            <span class="project__descr">Photography, Nature</span>
                         </div>
                     </div>
                     <div class="project">
@@ -277,8 +303,8 @@
                         </div>
                         <img src="assets/images/project/5.png" alt="5th-project" class="project__label">
                         <div class="project__footer">
-                            <div class="project__title">Quam Nutamus Farum</div>
-                            <div class="project__descr">Photography, Nature</div>
+                            <span class="project__title">Quam Nutamus Farum</span>
+                            <span class="project__descr">Photography, Nature</span>
                         </div>
                     </div>
                     <div class="project">
@@ -289,7 +315,7 @@
                         </div>
                         <img src="assets/images/project/6.png" alt="6th-project" class="project__label">
                         <div class="project__footer">
-                            <div class="project__title">Usus Legentis Videntur</div>
+                            <span class="project__title">Usus Legentis Videntur</span>
                             <div class="project__descr">Photography, Nature</div>
                         </div>
                     </div>

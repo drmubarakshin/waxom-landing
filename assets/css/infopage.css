@@ -56,6 +56,7 @@
     border: 1px solid #ececec;
     border-radius: 2px;
     transition: backcround-color .1s linear, color .1s linear;
+    cursor: pointer;
 }
 
 .infopage__btn.active {

@@ -36,3 +36,28 @@
 .gradient-block__btn {
     margin: auto 0;
 }
+
+@media screen and (max-width: 1260px) {
+    .gradient-block__inner {
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .gradient-block__inner {
+        flex-direction: column;
+        align-items: center;
+    }
+    .gradient-block__item {
+        margin: 50px 0 20px;
+    }
+    .gradient-block__btn {
+        margin-bottom: 50px;
+    }
+    .gradient-block__item-title {
+        text-align: center;
+    }
+    .gradient-block__item-description {
+        text-align: center;
+    }
+}

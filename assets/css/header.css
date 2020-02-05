@@ -15,6 +15,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    z-index: 3;
 }
 
 .header__inner-logo {
@@ -29,12 +30,31 @@
     font-family: Raleway;
 }
 
+.header__burger {
+    display: none;
+    z-index: 3;
+}
+
+.header__burger:hover {}
+
 .nav {
     display: flex;
     font-size: 14px;
     font-weight: 200;
     font-family: Montserrat;
     align-items: center;
+    z-index: 2;
+}
+
+.nav__close-button {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    font-size: 34px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color .1s linear;
 }
 
 .nav__link {
@@ -43,6 +63,10 @@
     text-decoration: none;
     white-space: nowrap;
     transition: color .1s linear;
+}
+
+.nav__link_img-block {
+    display: flex;
 }
 
 .nav__link:hover {
@@ -61,11 +85,72 @@
 .nav__link-img {
     width: 18px;
     height: 24px;
+    margin: auto 12px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1040px) {
     .nav {
         display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #454440;
+        flex-direction: column;
+        background-image: url("../images/intro/background-photo.png");
+        z-index: 5;
+    }
+    .nav__close-button {
+        display: block;
+    }
+    .nav__link,
+    .nav__link.last {
+        margin: 12px 0;
+        width: 100%;
+        text-align: center;
+        font-size: 34px;
+    }
+    .nav__link:first-child {
+        margin-top: 90px;
+    }
+    .nav__link_img-block {
+        margin-top: 15px;
+        flex-direction: row;
+    }
+    .nav__link-img {
+        margin: 0 45px;
+    }
+    .header__burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .header__burger span {
+        position: absolute;
+        background-color: #ffffff;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+    }
+    .header__burger:before,
+    .header__burger:after {
+        content: '';
+        background-color: #ffffff;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        /* right: 30px; */
+    }
+    .header__burger:before {
+        top: 0;
+    }
+    .header__burger:after {
+        bottom: 0;
     }
 }
 

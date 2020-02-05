@@ -69,6 +69,17 @@
             setTimeout(function() {
                 document.getElementById('intro').className = 'intro';
             }, 1000);
+        };
+        let isMenuOpened = false;
+
+        function openMobileMenu() {
+            if (isMenuOpened)
+                document.getElementById('nav-bar').style.display = "none";
+            else {
+                document.getElementById('')
+                document.getElementById('nav-bar').style.display = "flex";
+            }
+            isMenuOpened = !isMenuOpened;
         }
     </script>
 </head>
@@ -78,10 +89,13 @@
         <div class="container header">
             <div href="#" class="header__inner header__inner-logo">
                 <img src="assets/images/header/main-logo.svg" alt="logo" class="header__inner-logo_img">
-                <div class="header__text">Waxom</div>
+                <span class="header__text">Waxom</span>
+            </div>
+            <div class="header__burger" onclick="openMobileMenu()">
+                <span></span>
             </div>
 
-            <nav class="nav">
+            <nav id="nav-bar" class="nav">
                 <a href="#" class="nav__link">Home</a>
                 <a href="#" class="nav__link">About Us</a>
                 <a href="#" class="nav__link">Portfolio</a>
@@ -90,8 +104,11 @@
                 <a href="#" class="nav__link">Pricing</a>
                 <a href="#" class="nav__link">Shortcodes</a>
                 <a href="#" class="nav__link last">Contact</a>
-                <img src="assets/images/header/icon-cart.svg" alt="cart" class="nav__link nav__link-img">
-                <img src="assets/images/header/icon-search.svg" alt="search" class="nav__link search nav__link-img">
+                <div class="nav__link_img-block">
+                    <img src="assets/images/header/icon-cart.svg" alt="cart" class="nav__link-img">
+                    <img src="assets/images/header/icon-search.svg" alt="search" class="search nav__link-img">
+                </div>
+                <h1 class="nav__close-button" onclick="openMobileMenu()">X</h1>
             </nav>
         </div>
     </header>

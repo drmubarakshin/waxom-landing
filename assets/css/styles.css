@@ -22,28 +22,26 @@ body {
     max-width: 100%;
 }
 
-@media screen and (min-width: 769px) {
-    .container {
-        max-width: 1230px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-    }
-    .container.header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .container.intro {
-        position: relative;
-        max-width: 100%;
-    }
-    .container.projects {
-        grid-row-gap: 30px;
-    }
+.container {
+    max-width: 1230px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
 }
 
-@media screen and (max-width: 768px) {
-    .main-container {}
+.container.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px 0;
+}
+
+.container.intro {
+    position: relative;
+    max-width: 100%;
+}
+
+.container.projects {
+    grid-row-gap: 30px;
 }

@@ -8,6 +8,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 0 10px;
 }
 
 .navigation__item {
@@ -69,4 +70,18 @@
     font-weight: 200;
     font-family: Montserrat;
     text-align: center;
+}
+
+@media screen and (max-width: 1150px) {
+    .navigation__inner {
+        grid-column: 2 / 12;
+    }
+    .navigation__item {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0px;
+    }
+    .navigation__item:last-child {
+        margin-bottom: 90px;
+    }
 }

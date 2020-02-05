@@ -65,3 +65,12 @@
     color: #ffffff;
     background-color: #998675;
 }
+
+@media screen and (max-width: 820px) {
+    .infopage__title {
+        padding: 0 20px;
+    }
+    .infopage__description {
+        padding: 0 20px;
+    }
+}
